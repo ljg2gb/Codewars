@@ -24,3 +24,33 @@ function sakuraFall(v) {
   return v <= 0 ? 0 : 400 / v;
 }
 
+function findMultiples(integer, limit) {
+  let multiples = []
+  let i = 1
+  let multiple = integer * i
+  while (multiple <= limit) {
+    multiples.push(multiple);
+    i++;
+  };
+  return multiples
+}
+
+function findMultiples(int,limit){
+  let result = []
+  
+  for (let i = int; i<=limit ; i+=int)
+    result.push(i)
+    
+  return result
+}
+
+function findMultiples(integer,limit){
+  let multiples = []
+  
+  for (let i = integer; i<=limit; i+=integer) {
+    multiples.push(i)
+  }
+
+  return multiples
+}
+
