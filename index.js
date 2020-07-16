@@ -39,3 +39,12 @@ function removePreviousDuplicateItems(array){
   return [...uniqueSet].reverse()
 }
 
+// leetCode problem pair-programming with Nolan
+function groupAnagrams(input){
+  let hash = {}
+  input.forEach(word => {
+      let key = word.split('').sort()
+      hash[key] ? hash[key].push(word) : hash[key] = [word]
+  })
+  return Object.values(hash).flat()
+}
