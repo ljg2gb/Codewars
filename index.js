@@ -74,7 +74,12 @@ function removeElement(nums, val) {
   return nums.filter(num => num !== val)
 };
 
+// Given a sorted list of integers, square the elements and give the output in sorted order.
+// For example, given [-9, -2, 0, 2, 3], return [0, 4, 4, 9, 81].
+function squareAndSort(array) {
+  return array.map( num => num*num ).sort( (a,b) => a-b )
+}
 
-console.log(removeElement([-0, 1, 2, -3, 4, 5, -6], -6))
+console.log(squareAndSort([-9, -2, 0, 2, 3]))
 
 
