@@ -70,6 +70,11 @@ function maxDiffRefactored(list) {
   return (list <= 1) ? 0 : Math.max(...list) - Math.min(...list)  
 };
 
-// console.log(maxDiffRefactored([-0, 1, 2, -3, 4, 5, -6]))
+function removeElement(nums, val) {
+  return nums.filter(num => num !== val)
+};
+
+
+console.log(removeElement([-0, 1, 2, -3, 4, 5, -6], -6))
 
 
