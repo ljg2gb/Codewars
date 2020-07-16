@@ -40,11 +40,22 @@ function removePreviousDuplicateItems(array){
 }
 
 // leetCode problem pair-programming with Nolan
-function groupAnagrams(input){
+function groupAnagrams(array){
   let hash = {}
-  input.forEach(word => {
+  array.forEach(word => {
       let key = word.split('').sort()
       hash[key] ? hash[key].push(word) : hash[key] = [word]
   })
   return Object.values(hash).flat()
 }
+
+function halvingSum(n) {
+  let total = 0
+  while (n > 0) {
+    total = total + n; 
+    n = Math.floor(n/2);
+  }
+  return total 
+}
+
+// console.log(halvingSum(10))
