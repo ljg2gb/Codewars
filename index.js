@@ -80,6 +80,11 @@ function squareAndSort(array) {
   return array.map( num => num*num ).sort( (a,b) => a-b )
 }
 
-console.log(squareAndSort([-9, -2, 0, 2, 3]))
+function isPalindrome(x) {
+    const reversedX = parseInt(x.toString().split("").reverse().join(""))
+    return x === reversedX
+};
+
+console.log(isPalindrome(22))
 
 
