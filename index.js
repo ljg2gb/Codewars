@@ -80,11 +80,24 @@ function squareAndSort(array) {
   return array.map( num => num*num ).sort( (a,b) => a-b )
 }
 
+// 7/20/20 leetcode
 function isPalindrome(x) {
     const reversedX = parseInt(x.toString().split("").reverse().join(""))
     return x === reversedX
 };
 
-console.log(isPalindrome(22))
+// Daily Code question: recently asked by Google:
+// Given a list of numbers, and a number k, return whether any two numbers from the list add up to k.
+// For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+// Bonus: Can you do this in one pass?
+function DailyCodeQuestion1(array, num) {
+  for (i = 0; i < array.length; i++) {
+    if ( array[i] + array[i + 1] === num ) {
+      return true
+    }
+  }
+}
+
+console.log(DailyCodeQuestion1([10, 15, 10, 7], 17))
 
 
