@@ -90,10 +90,20 @@ function isPalindrome(x) {
 // Given a list of numbers, and a number k, return whether any two numbers from the list add up to k.
 // For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
 // Bonus: Can you do this in one pass?
-function DailyCodeQuestion1(array, num) {
+// function DailyCodeQuestion1(array, num) {
+//   for (i = 0; i < array.length; i++) {
+//     if ( array[i] + array[i + 1] === num ) {
+//       return true
+//     }
+//   }
+// }
+
+function DailyCodeQuestion1(array, sum) {
   for (i = 0; i < array.length; i++) {
-    if ( array[i] + array[i + 1] === num ) {
-      return true
+    let num1 = array[i]
+    for (x = 0; x < array.length; x++) {
+      let num2 = array[x]
+      return num1 + num2 === sum
     }
   }
 }
