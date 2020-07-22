@@ -100,13 +100,16 @@ function isPalindrome(x) {
 // }
 
 function DailyCodeQuestion1(array, sum) {
-  for (i = 0; i < array.length; i++) {
-    let num1 = array[i]
-    for (x = 0; x < array.length; x++) {
-      let num2 = array[x]
-      return num1 + num2 === sum
+  let lookup = {}
+
+  for (let i=0; i < array.length; i++) {
+    let target = sum - array[i]
+    if (lookup[target]) {
+      return true
     }
+    lookup[array[i]] = true
   }
+  return false
 }
 // Mock Technical Interview Code Problem
 // return a boolean, true if there exists TWO different movies that add up exactly to the flightLength
