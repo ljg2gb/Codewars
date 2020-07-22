@@ -40,6 +40,7 @@ function removePreviousDuplicateItems(array){
 }
 
 // leetCode problem pair-programming with Nolan
+// Given an array of strings, group anagrams together.
 function groupAnagrams(array){
   let hash = {}
   array.forEach(word => {
@@ -107,7 +108,24 @@ function DailyCodeQuestion1(array, sum) {
     }
   }
 }
+// Mock Technical Interview Code Problem
+// return a boolean, true if there exists TWO different movies that add up exactly to the flightLength
+function moviesPerFlight(flightLength, moviesArray) {
+  const movieObj = {}
+
+  for (let i=0; i < moviesArray.length; i++) {
+    let target = flightLength - moviesArray[i]
+    if (movieObj[target]) {
+      return true
+    }
+    movieObj[moviesArray[i]] = true
+  }
+  return false
+}
 
 console.log(DailyCodeQuestion1([10, 15, 10, 7], 17))
+
+
+
 
 
