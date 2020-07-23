@@ -125,7 +125,11 @@ function alphabetPosition1(text) {
     .join(' ')
 }
 
-console.log(alphabetPosition1("hey! hi, what's up? Is this working?"))
+function understandingCharCodeAt(index, sentence) {
+  return `${sentence.charAt(index)} is at character code ${sentence.charCodeAt(index)} and at alphabet position ${sentence.toLowerCase().charCodeAt(index) - 96} which is the same as ${sentence.toUpperCase().charCodeAt(index) - 64}`
+}
+
+console.log(understandingCharCodeAt(3, "That's a sentence."))
 
 
 
