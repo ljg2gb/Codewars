@@ -90,15 +90,6 @@ function isPalindrome(x) {
 // Daily Code question: recently asked by Google:
 // Given a list of numbers, and a number k, return whether any two numbers from the list add up to k.
 // For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
-// Bonus: Can you do this in one pass?
-// function DailyCodeQuestion1(array, num) {
-//   for (i = 0; i < array.length; i++) {
-//     if ( array[i] + array[i + 1] === num ) {
-//       return true
-//     }
-//   }
-// }
-
 function DailyCodeQuestion1(array, sum) {
   let lookup = {}
 
@@ -125,8 +116,21 @@ function moviesPerFlight(flightLength, moviesArray) {
   }
   return false
 }
+// codewars 7/23/20 (kata 6)
+function alphabetPosition(text) {
+  const alphabet = ['-','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  let lettersArray = []
+  const textArray = text.toLowerCase().split("")
+  textArray.forEach(item => {
+    if (item.match(/[a-zA-Z]/)) {
+      lettersArray.push(item)
+    }
+  })
+  const alphabetIndexArray = lettersArray.map(letter => alphabet.indexOf(letter))
+  return alphabetIndexArray.join(" ")
+}
 
-console.log(DailyCodeQuestion1([10, 15, 10, 7], 17))
+console.log(alphabetPosition("hey! hi, what's up? Is this working?"))
 
 
 
