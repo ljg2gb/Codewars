@@ -117,11 +117,11 @@ function moviesPerFlight(flightLength, moviesArray) {
   return false
 }
 // codewars 7/23/20 (kata 6)
-function alphabetPosition1(text) {
-  const alphabet = ['-','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-  let lettersArray = text.toLowerCase().match(/[a-z]/gi)
-  return lettersArray
-    .map(letter => alphabet.indexOf(letter))
+function alphabetPosition2(text) {
+  return text
+    .toLowerCase()
+    .match(/[a-z]/gi)
+    .map((c) => c.charCodeAt() - 96 )
     .join(' ')
 }
 
@@ -129,7 +129,7 @@ function understandingCharCodeAt(index, sentence) {
   return `${sentence.charAt(index)} is at character code ${sentence.charCodeAt(index)} and at alphabet position ${sentence.toLowerCase().charCodeAt(index) - 96} which is the same as ${sentence.toUpperCase().charCodeAt(index) - 64}`
 }
 
-console.log(understandingCharCodeAt(3, "That's a sentence."))
+console.log(alphabetPosition2("That's a sentence."))
 
 
 
