@@ -117,20 +117,15 @@ function moviesPerFlight(flightLength, moviesArray) {
   return false
 }
 // codewars 7/23/20 (kata 6)
-function alphabetPosition(text) {
+function alphabetPosition1(text) {
   const alphabet = ['-','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-  let lettersArray = []
-  const textArray = text.toLowerCase().split("")
-  textArray.forEach(item => {
-    if (item.match(/[a-zA-Z]/)) {
-      lettersArray.push(item)
-    }
-  })
-  const alphabetIndexArray = lettersArray.map(letter => alphabet.indexOf(letter))
-  return alphabetIndexArray.join(" ")
+  let lettersArray = text.toLowerCase().match(/[a-z]/gi)
+  return lettersArray
+    .map(letter => alphabet.indexOf(letter))
+    .join(' ')
 }
 
-console.log(alphabetPosition("hey! hi, what's up? Is this working?"))
+console.log(alphabetPosition1("hey! hi, what's up? Is this working?"))
 
 
 
