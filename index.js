@@ -116,9 +116,9 @@ function moviesPerFlight(flightLength, moviesArray) {
   }
   return false
 }
-// codewars 7/23/20 (kata 6)
-function alphabetPosition2(text) {
-  return text
+// codewars 7/23/20 (kata 6) refactored
+function alphabetPosition(sentence) {
+  return sentence
     .toLowerCase()
     .match(/[a-z]/gi)
     .map((c) => c.charCodeAt() - 96 )
@@ -129,7 +129,7 @@ function understandingCharCodeAt(index, sentence) {
   return `${sentence.charAt(index)} is at character code ${sentence.charCodeAt(index)} and at alphabet position ${sentence.toLowerCase().charCodeAt(index) - 96} which is the same as ${sentence.toUpperCase().charCodeAt(index) - 64}`
 }
 
-console.log(alphabetPosition2("That's a sentence."))
+console.log(alphabetPosition("That's a sentence."))
 
 
 
