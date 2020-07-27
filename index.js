@@ -129,6 +129,29 @@ function understandingCharCodeAt(index, sentence) {
   return `${sentence.charAt(index)} is at character code ${sentence.charCodeAt(index)} and at alphabet position ${sentence.toLowerCase().charCodeAt(index) - 96} which is the same as ${sentence.toUpperCase().charCodeAt(index) - 64}`
 }
 
+// For Aaron's dance team: given a list of people, return list of all possible pairs
+function noRepeatPartners(array) {
+
+
+}
+
+// Codewars 7/27 morning
+function solve(a,b){
+  if (a === 0 || b === 0) {
+    return [a,b]
+  }
+
+  if(a >= 2*b){
+    return solve(a-2*b ,b)
+  }
+
+  if(b >= 2*a){
+    return solve(a, b-2*a)
+  }
+  
+  return[a,b]
+}
+
 console.log(alphabetPosition("That's a sentence."))
 
 
