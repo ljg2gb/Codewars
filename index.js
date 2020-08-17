@@ -199,8 +199,12 @@ function weeklyPairs(combinations) {
 // 4*3*2*1 = 24
 
 
-function sortingNums(nums){
+function sortingNums(nums) {
   return nums.sort((a,b) => a-b)
+}
+
+function sortingLetters(letters) {
+  return letters.sort()
 }
 
 
@@ -218,4 +222,4 @@ function calculatingClassrooms(input) {
 // input: [[30, 75], [0, 50], [60, 150]]
 // output: 2
 
-console.log(sortingNums([1,7,3,9,10]))
+console.log( sortingLetters(["a", "y", "b", "s", "j", "s", "p"]) )
