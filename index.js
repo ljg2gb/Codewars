@@ -129,12 +129,6 @@ function understandingCharCodeAt(index, sentence) {
   return `${sentence.charAt(index)} is at character code ${sentence.charCodeAt(index)} and at alphabet position ${sentence.toLowerCase().charCodeAt(index) - 96} which is the same as ${sentence.toUpperCase().charCodeAt(index) - 64}`
 }
 
-// For Aaron's dance team: given a list of people, return list of all possible pairs
-function noRepeatPartners(array) {
-
-
-}
-
 // Codewars 7/27 morning
 function solve(a,b){
   if (a === 0 || b === 0) {
@@ -152,9 +146,76 @@ function solve(a,b){
   return[a,b]
 }
 
-console.log(alphabetPosition("That's a sentence."))
+// For Aaron's dance team: given a list of people, return list of all possible pairs
+function noRepeatPartners(array) {
+  let allCombinations = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+        allCombinations.push([array[i], array[j]]);
+    }
+  }
+  // return sortPartners(results)
+  return weeklyPairs(allCombinations)
+}
+
+function weeklyPairs(combinations) {
+  let results = {}
+  let weeks = parseInt(combinations.length/2)
+  for(weeks; weeks > 0; weeks--) {
+    results[weeks] = [combinations.flat()]
+  }
+  return results
+
+}
+// if either person's name is already in the week, add to the next available week
+// return arrays with only four names.
+// go by positions
+
+// function sortPartners(array) {
+//   let results = {};
+//   for (let i = 0; i < array.length/2 ; i++) {
+//     array.forEach(pair => {
+//       if (results[i]) {
+//         if ( results[i][0] !== pair[0] && results[i][1] !== pair[1] && results[i][0] !== pair[1] && results[i][1] !== pair[0]) {
+//           results[i].push(pair)
+//         }
+//       } 
+//       else {
+//         results[i] = pair
+//       }
+//     })
+//   }
+//   return results
+// }
 
 
+// console.log(noRepeatPartners(['Aaron', 'Lydia', 'Sasha', 'Ira']))
+// week 1: (aaron and lydia), (sasha and ira)
+// week 2: (aaron sasha), (lydia and ira)
+// week 3: (aaron, ira), (lydia, sasha)
+
+// t! / n! * (t-n)
+// 4! / 2! * (4-2)!
+// 4*3*2*1 = 24
 
 
+function sortingNums(nums){
+  return nums.sort((a,b) => a-b)
+}
 
+
+function calculatingClassrooms(input) {
+  hash = {}
+  input.forEach(interval => {
+    let key = interval.replace("(", "[")
+    hash[key] ? hash[key].push(interva) : hash[key] = [interval]
+})
+
+}
+
+
+// input: [(30, 75), (0, 50), (60, 150)]
+// input: [[30, 75], [0, 50], [60, 150]]
+// output: 2
+
+console.log(sortingNums([1,7,3,9,10]))
