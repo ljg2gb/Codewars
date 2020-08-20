@@ -207,19 +207,19 @@ function sortingLetters(letters) {
   return letters.sort()
 }
 
+// console.log( sortingLetters(["a", "y", "b", "s", "j", "s", "p"]) )
 
-function calculatingClassrooms(input) {
-  hash = {}
-  input.forEach(interval => {
-    let key = interval.replace("(", "[")
-    hash[key] ? hash[key].push(interva) : hash[key] = [interval]
-})
-
+// implement a function that determines if a string has all unique characters
+// what if you can't use any other data structures?
+// v1
+function isUnique(string) {
+  const sorted = string.split('').sort()
+  for (i=0; i < sorted.length; i++) {
+    if (sorted[i] === sorted[i+1]) {
+      return false
+    }
+  }
+  return true
 }
 
-
-// input: [(30, 75), (0, 50), (60, 150)]
-// input: [[30, 75], [0, 50], [60, 150]]
-// output: 2
-
-console.log( sortingLetters(["a", "y", "b", "s", "j", "s", "p"]) )
+console.log(isUnique('dad'))
