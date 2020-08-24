@@ -210,7 +210,6 @@ function sortingLetters(letters) {
 // console.log( sortingLetters(["a", "y", "b", "s", "j", "s", "p"]) )
 
 // implement a function that determines if a string has all unique characters
-// what if you can't use any other data structures?
 // v1
 function isUnique(string) {
   const sorted = string.split('').sort()
@@ -221,5 +220,25 @@ function isUnique(string) {
   }
   return true
 }
+// v2
+function isUnique2(string) {
+  if ( string.length > 128 ) {
+    return false
+  }
+  let charSet = {}
+  for (i=0; i < string.length; i++) {
+    let value = string.charAt(i)
+    if (charSet[value]) {
+      return false
+    }
+    charSet[value] = true
+  }
+  return true
+}
 
-console.log(isUnique('dad'))
+// what if you can't use any other data structures? Use a bit vector
+// v3
+function isUnique3() {
+
+}
+console.log(isUnique2('dd'))
