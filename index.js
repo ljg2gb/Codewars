@@ -236,9 +236,18 @@ function isUnique2(string) {
   return true
 }
 
-// what if you can't use any other data structures? Use a bit vector
+// what if you can't use any other data structures? Have to compare every character in the string to every other character in the string
 // v3
-function isUnique3() {
-
+function isUnique3(string) {
+  for(i = 0; i < string.length; i++) {
+    let char1 = string[i]
+    for(j = i + 1; j < string.length; j++) {
+      let char2 = string[j]
+      if (char1 === char2) {
+        return false
+      }
+    }
+  }
+  return true
 }
-console.log(isUnique2('dd'))
+console.log(isUnique3('da'))
