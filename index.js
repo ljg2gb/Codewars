@@ -83,7 +83,13 @@ function squareAndSort(array) {
 
 // 7/20/20 leetcode
 function isPalindrome(x) {
-    const reversedX = parseInt(x.toString().split("").reverse().join(""))
+    const reversedX = parseInt(
+      x
+        .toString()
+        .split("")
+        .reverse()
+        .join("")
+      )
     return x === reversedX
 };
 
@@ -250,4 +256,30 @@ function isUnique3(string) {
   }
   return true
 }
-console.log(isUnique3('da'))
+// console.log(isUnique3('da'))
+
+// Compute the running median of a sequence of numbers. That is, given a stream of numbers, print out the median of the list so far on each new element.
+// Recall that the median of an even-numbered list is the average of the two middle numbers.
+function runningMedian(arr) {
+  let runningArr = []
+  for (i = 0; i < arr.length; i++) {
+    let sortedWorkingArr = sortingNums(arr.slice(0, i + 1))
+    // console.log(sortedWorkingArr)
+
+    if (sortedWorkingArr.length % 2 === 0) {
+      const middleNum1 = sortedWorkingArr[ sortedWorkingArr.length / 2 ]
+      const middleNum2 = sortedWorkingArr[ ( sortedWorkingArr.length / 2 ) - 1 ]
+        runningArr.push(( middleNum1 + middleNum2 ) / 2 )
+      // console.log("even Average",( middleNum1 + middleNum2 ) / 2)
+      // console.log("even middle 1", middleNum1)
+      // console.log("even middle 2", middleNum2)
+    }
+    else {
+      const middleNum = sortedWorkingArr[ ( sortedWorkingArr.length / 2 ) - .5 ]
+      // console.log("odd middle num", middleNum)
+      runningArr.push(middleNum)
+    }
+  }
+  return runningArr
+}
+console.log(runningMedian([6,5,3,9,2,17,48,1,0]))
