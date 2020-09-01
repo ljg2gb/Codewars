@@ -264,18 +264,17 @@ function runningMedian(arr) {
   let runningArr = []
   for (i = 0; i < arr.length; i++) {
     let sortedWorkingArr = sortingNums(arr.slice(0, i + 1))
-    // console.log(sortedWorkingArr)
-
+    // console.log(sortedWorkingArr.length/2)
     if (sortedWorkingArr.length % 2 === 0) {
-      const middleNum1 = sortedWorkingArr[ sortedWorkingArr.length / 2 ]
-      const middleNum2 = sortedWorkingArr[ ( sortedWorkingArr.length / 2 ) - 1 ]
+      let middleNum1 = sortedWorkingArr[ sortedWorkingArr.length / 2 ]
+      let middleNum2 = sortedWorkingArr[ ( sortedWorkingArr.length / 2 ) - 1 ]
         runningArr.push(( middleNum1 + middleNum2 ) / 2 )
-      // console.log("even Average",( middleNum1 + middleNum2 ) / 2)
-      // console.log("even middle 1", middleNum1)
+      console.log("even Average",( middleNum1 + middleNum2 ) / 2)
+      console.log("even middle 1", middleNum1)
       // console.log("even middle 2", middleNum2)
     }
     else {
-      const middleNum = sortedWorkingArr[ ( sortedWorkingArr.length / 2 ) - .5 ]
+      let middleNum = sortedWorkingArr[ ( sortedWorkingArr.length / 2 ) - .5 ]
       // console.log("odd middle num", middleNum)
       runningArr.push(middleNum)
     }
