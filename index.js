@@ -108,20 +108,7 @@ function DailyCodeQuestion1(array, sum) {
   }
   return false
 }
-// Mock Technical Interview Code Problem
-// return a boolean, true if there exists TWO different movies that add up exactly to the flightLength
-function moviesPerFlight(flightLength, moviesArray) {
-  const movieObj = {}
 
-  for (let i=0; i < moviesArray.length; i++) {
-    let target = flightLength - moviesArray[i]
-    if (movieObj[target]) {
-      return true
-    }
-    movieObj[moviesArray[i]] = true
-  }
-  return false
-}
 // codewars 7/23/20 (kata 6) refactored
 function alphabetPosition(sentence) {
   return sentence
@@ -281,4 +268,4 @@ function runningMedian(arr) {
   }
   return runningArr
 }
-console.log(runningMedian([6,5,3,9,2,17,48,1,0]))
+// console.log(runningMedian([6,5,3,9,2,17,48,1,0]))

@@ -1,3 +1,19 @@
+// Mock Technical Interview Code Problem
+// return a boolean, true if there exists TWO different movies that add up exactly to the flightLength
+function moviesPerFlight(flightLength, moviesArray) {
+    const movieObj = {}
+  
+    for (let i=0; i < moviesArray.length; i++) {
+      let target = flightLength - moviesArray[i]
+      if (movieObj[target]) {
+        return true
+      }
+      movieObj[moviesArray[i]] = true
+    }
+    return false
+  }
+//   console.log(moviesPerFlight(120, [60,55,65,40,10]))
+
 // Pinterest Code Challenge
 function checkSubSudoku(matrix) {
     const rotatedMatrix = rotate(matrix)

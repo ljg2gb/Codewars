@@ -1,10 +1,10 @@
 // problems taken from Educative course "Data Structures for Coding Interviews in Javascript"
+
 // 1. Remove Even Integers from an Array
 function removeEven(arr) {
     return arr.filter((element => (element % 2 !== 0)))
 }
-
-console.log(removeEven([1,2,3,4,5,6,7,8,9]))
+// console.log(removeEven([1,2,3,4,5,6,7,8,9]))
 
 // 2. Merge Two Sorted Arrays
 function mergedArraysA(arr1, arr2) {
@@ -42,3 +42,16 @@ function mergedArraysB(arr1, arr2) {
 // console.log(mergedArraysB([1,5,7,9], [2,3,4,6,8]))
 
 // 3. Find two numbers in array that add up to a certain value
+function findSum(arr,value){
+    let map = {}
+    for (i=0; i < arr.length; i++) {
+        let target = value - arr[i]
+        if (map[target]) {
+            return [target, arr[i]]
+        }
+        map[arr[i]] = true
+    }
+    return false
+}
+
+console.log(findSum([1,2,3,4,5,6,6], 13))
