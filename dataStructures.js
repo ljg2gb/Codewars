@@ -141,6 +141,43 @@ function findProduct(arr) {
     return arr.map(element => product / element)
 }
 
+// 1. Using a nested loop
+function findProductA (arr) {
+    var result = []
+    var left = 1, currentProduct;
+    for ( i = 0; i < arr.length; i++ ) {
+        currentProduct = 1
+        for ( j=i+1; j < arr.length; j++ ) {
+            currentProduct *= arr[j]
+        }
+        result.push(currentProduct * left)
+        left *= arr[i]
+    }
+    return result
+}
+
+// 2. Optimizing the number of multiplications
+function findProductB(arr) {
+    var temp = 1,
+        product = []
+    for ( i=0; i < arr.length; i++ ) {
+        product[i] = temp
+        temp *= arr[i]
+    }
+    temp = 1
+    for ( i = arr.length - 1; i > -1; i--) {
+        product[i] *= temp
+        temp *= arr[i]
+    }
+    return product
+}
+
 console.log(findProduct([1,2,3]))
+
+// Daily Code Questions
+// Determine how "out of order" an array is by counting the number of inversions it has in less than O^2 time
+function countingInversions(arr) {
+
+}
 
 
