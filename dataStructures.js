@@ -155,6 +155,7 @@ function findProductA (arr) {
     }
     return result
 }
+// time complexity: O(n^2)
 
 // 2. Optimizing the number of multiplications
 function findProductB(arr) {
@@ -171,6 +172,7 @@ function findProductB(arr) {
     }
     return product
 }
+// time complexity: O(n)
 
 console.log(findProduct([1,2,3]))
 
