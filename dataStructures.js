@@ -174,12 +174,20 @@ function findProductB(arr) {
 }
 // time complexity: O(n)
 
-console.log(findProduct([1,2,3]))
+// console.log(findProduct([1,2,3]))
 
-// Daily Code Questions
+// Daily Coding Problem
 // Determine how "out of order" an array is by counting the number of inversions it has in less than O^2 time
 function countingInversions(arr) {
-
+    let count = 0
+    for (i = 0; i - 1 < arr.length; i++) {
+        if (arr[i] > arr[i+1]) {
+            count += 1
+        }
+    }
+    return count
 }
+
+console.log(countingInversions([1,2,6,4,8]))
 
 
