@@ -218,5 +218,6 @@ function findFirstUnique(arr) {
     }
     return arr.length ? arr[0] : null
 }
+// time complexity is O(n^2)
 
 console.log(findFirstUnique([3,6,5,1,6,9,3]))
