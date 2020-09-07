@@ -202,4 +202,21 @@ function findMinimum(arr) {
 }
 // time complexity is 0(n)
 
-console.log(findMinimum([74,6,-10,9]))
+// console.log(findMinimum([74,6,-10,9]))
+
+// Challenge 6: Find first unique Integer in array
+function findFirstUnique(arr) {
+    for (i=0; i<arr.length; i++) {
+        let num1 = arr[i]
+        for (j=0; j<arr.length; j++) {
+            let num2 = arr[j]
+            if (num1 === num2 && i != j) {
+                arr.splice(i, 1)
+                arr.splice(j, 1)
+            }
+        }
+    }
+    return arr.length ? arr[0] : null
+}
+
+console.log(findFirstUnique([3,6,5,1,6,9,3]))
