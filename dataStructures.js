@@ -220,4 +220,13 @@ function findFirstUnique(arr) {
 }
 // time complexity is O(n^2)
 
-console.log(findFirstUnique([3,6,5,1,6,9,3]))
+// console.log(findFirstUnique([3,6,5,1,6,9,3]))
+
+// challenge 7: find the second largest number in the array
+function findSecondMaximum(arr) {
+    const sorted = [...new Set(arr.sort((a,b) => a-b))]
+    const secondToLast = sorted.length - 2
+    return sorted[secondToLast];
+}
+
+console.log(findSecondMaximum([1,7,5,9,3,60,60,7,3,4]))
