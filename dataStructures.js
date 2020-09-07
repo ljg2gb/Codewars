@@ -188,6 +188,18 @@ function countingInversions(arr) {
     return count
 }
 
-console.log(countingInversions([1,2,6,4,8]))
+// console.log(countingInversions([1,2,6,4,8]))
 
+// challenge 5: Finding the minimum value in an array
+function findMinimum(arr) {
+    let min = arr[0]
+    for (i=1; i<arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i]
+        }
+    }
+    return min;
+}
+// time complexity is 0(n)
 
+console.log(findMinimum([74,6,-10,9]))

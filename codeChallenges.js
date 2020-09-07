@@ -14,7 +14,7 @@ function moviesPerFlight(flightLength, moviesArray) {
   }
 //   console.log(moviesPerFlight(120, [60,55,65,40,10]))
 
-// Pinterest Code Challenge
+// Code Challenge from prospective employer
 function checkSubSudoku(matrix) {
     const rotatedMatrix = rotate(matrix)
     return (checkValues(matrix) && checkValues(rotatedMatrix))
