@@ -228,5 +228,21 @@ function findSecondMaximum(arr) {
     const secondToLast = sorted.length - 2
     return sorted[secondToLast];
 }
+// time complexity: Because of the sort, it is going to be at least O(nlogn)
 
-console.log(findSecondMaximum([1,7,5,9,3,60,60,7,3,4]))
+function findSecondMaximumB(arr) {
+    let max = null
+    let secondmax = null
+    for (let val of arr) {
+        if ( val > max ) {
+            secondmax = max
+            max = val
+        } else if (val < max && val > secondmax) {
+            secondmax = val
+        }
+    }
+    return secondmax
+}
+// time complexity is O(n)
+
+console.log(findSecondMaximumB([1,7,5,9,3,60,60,7,3,4]))
