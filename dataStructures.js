@@ -245,4 +245,23 @@ function findSecondMaximumB(arr) {
 }
 // time complexity is O(n)
 
-console.log(findSecondMaximumB([1,7,5,9,3,60,60,7,3,4]))
+// console.log(findSecondMaximumB([1,7,5,9,3,60,60,7,3,4]))
+
+// Unrolling a matrix
+// given a matrix, unroll it in a clockwise direction
+function unrollAMatrix(matrix) {
+    let unrolled = []
+    while (matrix.length > 0) {
+        // grab top
+        unrolled.push(matrix.shift())
+        // grab right
+        unrolled.push(matrix.map(row => row.pop()))
+        // grab bottom
+        unrolled.push(matrix.pop().reverse())
+        // grab left
+        unrolled.push(matrix.map(row => row.shift()).reverse())
+    }
+    return unrolled.flat()
+}
+
+console.log(unrollAMatrix([[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]]))
