@@ -289,4 +289,22 @@ function reArrange(arr) {
     return [...neg, ...pos];
 }
 
-console.log(reArrange([1,-5,4,5,-70,3]))
+// method2: rearranging in Place
+function reArrange2(arr) {
+    let leftMostPosEl = 0,
+        temp;
+    for ( var i = 0; i < arr.length; i++ ) {
+        if (arr[i] < 0 ) {
+            if (i != leftMostPosEl) {
+                temp = arr[i];
+                arr[i] = arr[leftMostPosEl];
+                arr[leftMostPosEl] = temp;
+            }
+            leftMostPosEl += 1
+        }
+    }
+    return arr;  
+}
+// both solutions are completed in n time however, the first solutions runs with less cyclomatic complexity
+
+console.log(reArrange2([1,-5,4,5,-70,3]))
