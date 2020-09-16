@@ -307,4 +307,24 @@ function reArrange2(arr) {
 }
 // both solutions are completed in n time however, the first solutions runs with less cyclomatic complexity
 
-console.log(reArrange2([1,-5,4,5,-70,3]))
+// console.log(reArrange2([1,-5,4,5,-70,3]))
+
+// Challenge 10: rearrange array ordered from max to min
+function maxMin(arr) {
+   return arr.sort((a,b) => b-a)
+}
+// time complexity: nlogn
+
+function maxMin2(arr) {
+    var result = []
+    for (var i = 0; i < (Math.floor(arr.length / 2)); i++) {
+        result.push(arr[arr.length - (i + 1)])
+        result.push(arr[i])
+    }
+
+    if (arr.length % 2)
+        result.push(arr[Math.floor(arr.length/2)])
+    return result
+}
+
+console.log(maxMin2([2,5,4,1,3]))
