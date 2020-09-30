@@ -318,13 +318,15 @@ function maxMin(arr) {
 function maxMin2(arr) {
     var result = []
     for (var i = 0; i < (Math.floor(arr.length / 2)); i++) {
+        if (arr.length % 2) {
+            result.push(arr[Math.floor(arr.length/2)])
+        }
+
         result.push(arr[arr.length - (i + 1)])
         result.push(arr[i])
     }
 
-    if (arr.length % 2)
-        result.push(arr[Math.floor(arr.length/2)])
     return result
 }
 
-console.log(maxMin2([2,5,4,1,3]))
+// console.log(maxMin2([2,5,4,1,3]))

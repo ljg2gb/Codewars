@@ -47,4 +47,14 @@ function rotate(matrix) {
     return rotated
 }
 
-console.log(checkSubSudoku( [ [2,2,3],[2,3,1],[3,1,2] ] ))
+// console.log(checkSubSudoku( [ [2,2,3],[2,3,1],[3,1,2] ] ))
+
+function talentPath(n,a) {
+    const b = a
+    for (i=0; i < n -1; i++) {
+        b[i] - a[i -1] + a[i] + a[i + 1]
+    }
+    return b
+}
+
+console.log(talentPath(2, [0,1]))
