@@ -311,10 +311,14 @@ function totallingApples(arr) {
 // console.log(allApples(['🍎','🍎','🍎', '🍊','🍎','🍊']))
 // console.log(totallingApples([2,5,6,20]))
 
-function yearsAgo(pastYear) {
+function Age( birthMonth, birthYear ) {
   const todaysDate = new Date()
   const thisYear = todaysDate.getFullYear()
-  return thisYear - pastYear
+  const thisMonth = todaysDate.getMonth() + 1
+  if (thisMonth <= birthMonth) {
+    return thisYear - birthYear - 1
+  }
+  return thisYear - birthYear
 }
 
-console.log(yearsAgo(1995))
+console.log(Age(9, 1995))
