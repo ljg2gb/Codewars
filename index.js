@@ -309,4 +309,12 @@ function totallingApples(arr) {
 // console.log(applesToOranges(['🍎','🍎','🍎','🍎']))
 // console.log(mappingApplesToOranges(['🍎','🍎','🍎','🍎']))
 // console.log(allApples(['🍎','🍎','🍎', '🍊','🍎','🍊']))
-console.log(totallingApples([2,5,6,20]))
+// console.log(totallingApples([2,5,6,20]))
+
+function yearsAgo(pastYear) {
+  const todaysDate = new Date()
+  const thisYear = todaysDate.getFullYear()
+  return thisYear - pastYear
+}
+
+console.log(yearsAgo(1995))

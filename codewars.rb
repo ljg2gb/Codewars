@@ -11,3 +11,10 @@ def greet name, name2
 end
 
 greet 'Lydia', 'Meredith'
+
+class DogClass
+
+end
+
+# on the dog class we call the .new method that will instantiate a new dog
+fido = DogClass.new
