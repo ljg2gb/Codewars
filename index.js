@@ -311,14 +311,25 @@ function totallingApples(arr) {
 // console.log(allApples(['🍎','🍎','🍎', '🍊','🍎','🍊']))
 // console.log(totallingApples([2,5,6,20]))
 
-function Age( birthMonth, birthYear ) {
+function Age( birthDay, birthMonth, birthYear ) {
   const todaysDate = new Date()
   const thisYear = todaysDate.getFullYear()
   const thisMonth = todaysDate.getMonth() + 1
-  if (thisMonth <= birthMonth) {
-    return thisYear - birthYear - 1
+  const thisDay = todaysDate.getDate()
+
+  if (thisYear < birthYear || ( thisYear === birthYear && thisMonth < birthMonth ) ) {
+    return 'not a valid birthday'
   }
-  return thisYear - birthYear
+  if (thisYear === birthYear) {
+    const monthsOld = thisMonth - birthMonth 
+    return monthsOld === 1 ? monthsOld + ' month old' : monthsOld + ' months old'
+  }
+  if (thisMonth > birthMonth || ( thisMonth === birthMonth && thisDay >= birthDay )) {
+    const yearsOld = thisYear - birthYear 
+    return yearsOld === 1 ? yearsOld + ' year old' : yearsOld + ' years old'
+  }
+  return thisYear - birthYear - 1 + ' years old'
+
 }
 
-console.log(Age(9, 1995))
+console.log(Age(22, 10, 2019))
