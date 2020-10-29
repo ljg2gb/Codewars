@@ -332,4 +332,25 @@ function Age( birthDay, birthMonth, birthYear ) {
 
 }
 
-console.log(Age(22, 10, 2019))
+// console.log(Age(22, 10, 2019))
+
+function sumOfSingles(arr) {
+  const uniques = arr.un
+}
+
+function repeats(arr){
+  let hash = {}
+  for (i=0; i<arr.length; i++) {
+    if (hash[arr[i]]) {
+      hash[arr[i]] = false
+    } else { 
+      hash[arr[i]] = arr[i]
+    }
+  }
+  const values = Object.values(hash)
+  const uniqueNumbers = values.filter( thing => thing !== false)
+  const sum = uniqueNumbers.reduce((acc, num) => acc += num)
+  return sum
+};
+
+console.log(repeats([1,2,3,4,5,6,7,8,2,3,4,5,6,7]))

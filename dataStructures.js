@@ -206,6 +206,8 @@ function findMinimum(arr) {
 
 // Challenge 6: Find first unique Integer in array
 function findFirstUnique(arr) {
+    let hash = {}
+    
     for (i=0; i<arr.length; i++) {
         let num1 = arr[i]
         for (j=0; j<arr.length; j++) {
