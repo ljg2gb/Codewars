@@ -349,8 +349,15 @@ function repeats(arr){
   }
   const values = Object.values(hash)
   const uniqueNumbers = values.filter( thing => thing !== false)
-  const sum = uniqueNumbers.reduce((acc, num) => acc += num)
+  const sum = uniqueNumbers.reduce((acc, num) => acc + num)
   return sum
 };
 
-console.log(repeats([1,2,3,4,5,6,7,8,2,3,4,5,6,7]))
+// console.log(repeats([1,2,3,4,5,6,7,8,2,3,4,5,6,7]))
+
+function oddOrEvenSum(arr) {
+  if (arr.length === 0) { return 'even' }
+  return arr.reduce( (a,n) => a+n ) % 2 === 0 ? 'even' : 'odd'
+}
+
+console.log(oddOrEvenSum([1,3]))
