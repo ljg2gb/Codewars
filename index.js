@@ -362,8 +362,13 @@ function oddOrEvenSum(arr) {
 
 // console.log(oddOrEvenSum([1,3]))
 
-function createPhoneNumber(n){
-  return `(${n[0]}${n[1]}${n[2]}) ${n[3]}${n[4]}${n[5]}-${n[6]}${n[7]}${n[8]}${n[9]}`
+// function createPhoneNumber(n){
+//   return `(${n[0]}${n[1]}${n[2]}) ${n[3]}${n[4]}${n[5]}-${n[6]}${n[7]}${n[8]}${n[9]}`
+// }
+
+function createPhoneNumber(numbers){
+  const n = numbers.join('');
+  return '(' + n.substring(0, 3) + ') ' + n.substring(3, 6) + '-' + n.substring(6);
 }
 
 
