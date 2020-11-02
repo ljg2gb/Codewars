@@ -360,4 +360,11 @@ function oddOrEvenSum(arr) {
   return arr.reduce( (a,n) => a+n ) % 2 === 0 ? 'even' : 'odd'
 }
 
-console.log(oddOrEvenSum([1,3]))
+// console.log(oddOrEvenSum([1,3]))
+
+function createPhoneNumber(n){
+  return `(${n[0]}${n[1]}${n[2]}) ${n[3]}${n[4]}${n[5]}-${n[6]}${n[7]}${n[8]}${n[9]}`
+}
+
+
+console.log(createPhoneNumber([8,0,4,3,5,0,7,9,0,1]))
