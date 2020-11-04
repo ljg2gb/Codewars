@@ -68,7 +68,7 @@ function maxDiff(list) {
 
 // MaxDiff refactored w/ Math.max/.min
 function maxDiffRefactored(list) {
-  return (list <= 1) ? 0 : Math.max(...list) - Math.min(...list)  
+  return (list.length <= 1) ? 0 : Math.max(...list) - Math.min(...list)  
 };
 
 function removeElement(nums, val) {
@@ -127,15 +127,12 @@ function solve(a,b){
   if (a === 0 || b === 0) {
     return [a,b]
   }
-
   if(a >= 2*b){
     return solve(a-2*b ,b)
   }
-
   if(b >= 2*a){
     return solve(a, b-2*a)
   }
-  
   return[a,b]
 }
 
@@ -370,6 +367,31 @@ function createPhoneNumber(numbers){
   const n = numbers.join('');
   return '(' + n.substring(0, 3) + ') ' + n.substring(3, 6) + '-' + n.substring(6);
 }
+// console.log(createPhoneNumber([8,0,4,3,5,0,7,9,0,1]))
 
+function isValid(s){
+  const stack = []
+  for (i=0; i < s.length; i++){
+    let char = stack[stack.length - 1];
+    if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
+      stack.push(s[i])
+    } else if (
+        (char == "(" && s[i] == ')') || 
+        (char == "[" && s[i] == ']')|| 
+        (char == "}" && s[i] == '}')
+      ) {
+        stack.pop()
+    } else return false
+  }
+  return stack.length ? false : true
+}
 
-console.log(createPhoneNumber([8,0,4,3,5,0,7,9,0,1]))
+// console.log(isValid('[][][]'))
+
+function WhichAreIn(array1,array2){
+  return array1
+    .filter(a1 => array2.find(a2 => a2.match(a1)))
+    .sort()
+}
+
+console.log(WhichAreIn(['strong','live','pur'],['lively', 'armstrong', 'purpose']))

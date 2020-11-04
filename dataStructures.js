@@ -2,7 +2,7 @@
 
 // Challenge 1: Remove Even Integers from an Array
 function removeEven(arr) {
-    return arr.filter((element => (element % 2 !== 0)))
+    return arr.filter(num => num % 2 !== 0)
 }
 // console.log(removeEven([1,2,3,4,5,6,7,8,9]))
 
@@ -10,6 +10,7 @@ function removeEven(arr) {
 function mergedArraysA(arr1, arr2) {
     return [...arr1, ...arr2].sort((a,b) => a-b)
 }
+
 // time complexity: O(nlogn) 
 // Because of the sort method, this solution is not very time efficient
 
@@ -26,7 +27,6 @@ function mergedArraysB(arr1, arr2) {
             j++;
         }
     };
-
     if (i <= (arr1.length - 1)) {
         arr1.splice(0, i)
         merged = merged.concat(arr1);
