@@ -388,10 +388,24 @@ function isValid(s){
 
 // console.log(isValid('[][][]'))
 
-function WhichAreIn(array1,array2){
+function whichAreIn(array1,array2){
   return array1
     .filter(a1 => array2.find(a2 => a2.match(a1)))
     .sort()
 }
 
-console.log(WhichAreIn(['strong','live','pur'],['lively', 'armstrong', 'purpose']))
+// console.log(whichAreIn(['strong','live','pur'],['lively', 'armstrong', 'purpose']))
+
+function splitInPairs(string) {
+  const pairs = []
+  const array = string.split('')
+
+  for (i=0; i < array.length; i+=2) {
+    pairs.push(`${array[i]}${array[i+1]}`)
+  }
+  
+  return pairs
+}
+
+console.log(splitInPairs('dogs'))
+
