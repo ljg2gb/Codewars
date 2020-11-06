@@ -401,11 +401,12 @@ function splitInPairs(string) {
   const array = string.split('')
 
   for (i=0; i < array.length; i+=2) {
-    pairs.push(`${array[i]}${array[i+1]}`)
+    const secondInPair = array[i+1] || ' '
+    pairs.push(`${array[i]}${secondInPair}`)
   }
-  
+
   return pairs
 }
 
-console.log(splitInPairs('dogs'))
+console.log(splitInPairs('doggy'))
 
